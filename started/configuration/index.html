@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/hexo/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/hexo/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/hexo/images/favicon-16x16.png">
+  <link rel="mask-icon" href="/hexo/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/hexo/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"mopsite.github.io","root":"/hexo/","images":"/hexo/images","scheme":"Gemini","darkmode":false,"version":"8.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/hexo/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/hexo/js/config.js"></script>
+<meta name="description" content="你可以在 _config.yml 文件中修改大部分的配置。 网站   参数 描述    title 网站标题   subtitle 网站副标题   description 网站描述   keywords 网站的关键词。支持多个关键词。   author 你的名字   language 网站使用的语言。对于简体中文，不同的主题可能会有不同的值，常见的有zh-Hans和zh-CN。   timezon">
+<meta property="og:type" content="website">
+<meta property="og:title" content="配置">
+<meta property="og:url" content="https://mopsite.github.io/hexo/started/configuration/index.html">
+<meta property="og:site_name" content="Hexo-CLI">
+<meta property="og:description" content="你可以在 _config.yml 文件中修改大部分的配置。 网站   参数 描述    title 网站标题   subtitle 网站副标题   description 网站描述   keywords 网站的关键词。支持多个关键词。   author 你的名字   language 网站使用的语言。对于简体中文，不同的主题可能会有不同的值，常见的有zh-Hans和zh-CN。   timezon">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-10-20T13:24:26.000Z">
+<meta property="article:modified_time" content="2021-11-15T17:37:42.193Z">
+<meta property="article:author" content="Hexo">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://mopsite.github.io/hexo/started/configuration/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":false,"lang":"zh-CN","comments":true,"permalink":"https://mopsite.github.io/hexo/started/configuration/index.html","path":"started/configuration/index.html","title":"配置"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>配置 | Hexo-CLI
+</title>
+  
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/hexo/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/hexo/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">Hexo-CLI</h1>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-安装"><a href="/hexo/installation/" rel="section"><i class="fa fa-download fa-fw"></i>安装</a></li>
+        
+            
+  <li class="menu-item menu-item-开始使用"><a href="/hexo/started/" rel="section"><i class="fa fa-bell fa-fw"></i>开始使用</a></li>
+
+
+      
+        
+            
+  <li class="menu-item menu-item-基本操作"><a href="/hexo/usage/" rel="section"><i class="fa fa-pen fa-fw"></i>基本操作</a></li>
+
+
+      
+        <li class="menu-item menu-item-部署"><a href="/hexo/deployment/" rel="section"><i class="fa fa-project-diagram fa-fw"></i>部署</a></li>
+        
+            
+  <li class="menu-item menu-item-自定义"><a href="/hexo/customization/" rel="section"><i class="fa fa-cog fa-fw"></i>自定义</a></li>
+
+
+      
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BD%91%E7%AB%99"><span class="nav-number">1.</span> <span class="nav-text">网站</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BD%91%E5%9D%80"><span class="nav-number">2.</span> <span class="nav-text">网址</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9B%AE%E5%BD%95"><span class="nav-number">3.</span> <span class="nav-text">目录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%86%99%E4%BD%9C"><span class="nav-number">4.</span> <span class="nav-text">写作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%86%E7%B1%BB-amp-%E6%A0%87%E7%AD%BE"><span class="nav-number">5.</span> <span class="nav-text">分类 &amp; 标签</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%97%A5%E6%9C%9F-%E6%97%B6%E9%97%B4%E6%A0%BC%E5%BC%8F"><span class="nav-number">6.</span> <span class="nav-text">日期 &#x2F; 时间格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%86%E9%A1%B5"><span class="nav-number">7.</span> <span class="nav-text">分页</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8C%85%E6%8B%AC%E6%88%96%E4%B8%8D%E5%8C%85%E6%8B%AC%E7%9B%AE%E5%BD%95%E5%92%8C%E6%96%87%E4%BB%B6"><span class="nav-number">8.</span> <span class="nav-text">包括或不包括目录和文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%89%A9%E5%B1%95"><span class="nav-number">9.</span> <span class="nav-text">扩展</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%83%A8%E7%BD%B2"><span class="nav-number">10.</span> <span class="nav-text">部署</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%87%E7%94%A8%E7%AB%99%E7%82%B9%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="nav-number">11.</span> <span class="nav-text">备用站点配置文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%87%E7%94%A8%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="nav-number">12.</span> <span class="nav-text">备用主题配置文件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E4%B8%AD%E7%9A%84-theme-config"><span class="nav-number">12.1.</span> <span class="nav-text">配置文件中的 theme_config</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%8B%AC%E7%AB%8B%E7%9A%84-config-theme-yml-%E6%96%87%E4%BB%B6"><span class="nav-number">12.2.</span> <span class="nav-text">独立的 _config.[theme].yml 文件</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Hexo"
+      src="/hexo/images/avatar.svg">
+  <p class="site-author-name" itemprop="name">Hexo</p>
+  <div class="site-description" itemprop="description">快速、简洁且高效的博客框架</div>
+</div>
+
+
+  <div class="links-of-blogroll site-overview-item animated">
+    <div class="links-of-blogroll-title">
+      
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://mopsite.github.io/git" title="https:&#x2F;&#x2F;mopsite.github.io&#x2F;git">Git</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://mopsite.github.io/next" title="https:&#x2F;&#x2F;mopsite.github.io&#x2F;next">NexT</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://mopsite.github.io/fontawesome" title="https:&#x2F;&#x2F;mopsite.github.io&#x2F;fontawesome">FontAwesome</a>
+        </li>
+    </ul>
+  </div>
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner page posts-expand">
+  
+
+      
+
+        
+        <ul class="sub-menu menu">
+          
+            
+          
+          
+              
+  <li class="menu-item menu-item-配置"><a href="/hexo/started/configuration/" rel="section"><i class="fa fa-balance-scale fa-fw"></i>配置</a></li>
+
+
+          
+          
+              
+  <li class="menu-item menu-item-命令"><a href="/hexo/started/commands/" rel="section"><i class="fa fa-keyboard fa-fw"></i>命令</a></li>
+
+
+          
+        </ul>
+        
+
+        
+        
+      
+
+      
+      
+
+      
+      
+  
+
+
+    
+    
+    
+    <div class="post-block" lang="zh-CN"><header class="post-header">
+
+<h1 class="post-title" itemprop="name headline">配置
+</h1>
+
+<div class="post-meta-container">
+  <ul class="breadcrumb">
+            <li><a href="/hexo/started/">STARTED</a></li>
+          <li>CONFIGURATION</li>
+        
+  </ul>
+</div>
+
+</header>
+
+      
+      
+      <div class="post-body">
+          <p>你可以在 _config.yml 文件中修改大部分的配置。</p>
+<h3 id="网站"><a href="#网站" class="headerlink" title="网站"></a>网站</h3><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>title</td>
+<td>网站标题</td>
+</tr>
+<tr>
+<td>subtitle</td>
+<td>网站副标题</td>
+</tr>
+<tr>
+<td>description</td>
+<td>网站描述</td>
+</tr>
+<tr>
+<td>keywords</td>
+<td>网站的关键词。支持多个关键词。</td>
+</tr>
+<tr>
+<td>author</td>
+<td>你的名字</td>
+</tr>
+<tr>
+<td>language</td>
+<td>网站使用的语言。对于简体中文，不同的主题可能会有不同的值，常见的有<code>zh-Hans</code>和<code>zh-CN</code>。</td>
+</tr>
+<tr>
+<td>timezone</td>
+<td>网站时区。Hexo 默认使用你电脑的时区。一般，对于中国大陆地区可以使用<code>Asia/Shanghai</code>。</td>
+</tr>
+</tbody></table>
+<div class="note info no-icon"><p>其中，<code>description</code>主要用于 SEO，告诉搜索引擎一个关于你站点的简单描述，通常建议在其中包含你网站的关键词。<code>author</code>参数用于主题显示文章的作者。</p>
+</div>
+
+<h3 id="网址"><a href="#网址" class="headerlink" title="网址"></a>网址</h3><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>描述</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>url</td>
+<td>网址，必须以 http:// 或 https:// 开头</td>
+<td></td>
+</tr>
+<tr>
+<td>permalink</td>
+<td>文章的永久链接格式</td>
+<td>:year/:month/:day/:title/</td>
+</tr>
+<tr>
+<td>permalink_defaults</td>
+<td>永久链接中各部分的默认值</td>
+<td></td>
+</tr>
+<tr>
+<td>pretty_urls</td>
+<td>改写永久链接的值来美化 URL</td>
+<td></td>
+</tr>
+<tr>
+<td>pretty_urls.trailing_index</td>
+<td>是否在永久链接中保留尾部的 index.html</td>
+<td>true</td>
+</tr>
+<tr>
+<td>pretty_urls.trailing_html</td>
+<td>是否在永久链接中保留尾部的 .html，对尾部的 index.html 无效</td>
+<td>true</td>
+</tr>
+</tbody></table>
+<div class="note info no-icon"><p>比如，一个页面的永久链接是 <a target="_blank" rel="noopener" href="http://example.com/foo/bar/index.html">http://example.com/foo/bar/index.html</a> ，设置为：</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">pretty_urls:</span></span><br><span class="line">  <span class="attr">trailing_index:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+
+<p>此时页面的永久链接会变为 <a target="_blank" rel="noopener" href="http://example.com/foo/bar/">http://example.com/foo/bar/</a> 。</p>
+</div>
+
+<h3 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h3><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>描述</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>source_dir</td>
+<td>资源文件夹，用来存放内容。</td>
+<td>source</td>
+</tr>
+<tr>
+<td>public_dir</td>
+<td>公共文件夹，用来存放生成的站点文件。</td>
+<td>public</td>
+</tr>
+<tr>
+<td>tag_dir</td>
+<td>标签文件夹。</td>
+<td>tags</td>
+</tr>
+<tr>
+<td>archive_dir</td>
+<td>归档文件夹。</td>
+<td>archives</td>
+</tr>
+<tr>
+<td>category_dir</td>
+<td>分类文件夹。</td>
+<td>categories</td>
+</tr>
+<tr>
+<td>code_dir</td>
+<td><code>source_dir</code>下的子目录，包含 code 文件夹。</td>
+<td>downloads/code</td>
+</tr>
+<tr>
+<td>i18n_dir</td>
+<td>国际化（i18n）文件夹。</td>
+<td>:lang</td>
+</tr>
+<tr>
+<td>skip_render</td>
+<td>跳过指定文件夹的渲染。匹配到的文件不会被改动，直接复制到 public 目录中。可以使用 <a target="_blank" rel="noopener" href="https://github.com/micromatch/micromatch#extended-globbing">glob</a> 表达式来匹配路径。</td>
+<td></td>
+</tr>
+</tbody></table>
+<div class="note info no-icon"><p>比如，设置了：</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">skip_render:</span> <span class="string">&quot;mypage/**/*&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>会直接将 source/mypage 目录下的所有文件不做改动地输出到 public 目录下。</p>
+<p>你也可以使用这种方法来跳过对指定文章文件的渲染，例如：</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">skip_render:</span> <span class="string">&quot;_posts/test-post.md&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>这将会忽略对 test-post.md 的渲染。</p>
+<p>如果你刚开始接触 Hexo，通常没有必要修改这部分的值。</p>
+</div>
+
+<h3 id="写作"><a href="#写作" class="headerlink" title="写作"></a>写作</h3><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>描述</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>new_post_name</td>
+<td>新文章的文件名称</td>
+<td>:title.md</td>
+</tr>
+<tr>
+<td>default_layout</td>
+<td>预设布局</td>
+<td>post</td>
+</tr>
+<tr>
+<td>titlecase</td>
+<td>把标题转换为首字母大写</td>
+<td>false</td>
+</tr>
+<tr>
+<td>external_link</td>
+<td>在新标签中打开链接</td>
+<td></td>
+</tr>
+<tr>
+<td>external_link.enable</td>
+<td>启用在新标签中打开链接</td>
+<td>true</td>
+</tr>
+<tr>
+<td>external_link.field</td>
+<td>对整个网站（site）生效或仅对文章（post）生效</td>
+<td>site</td>
+</tr>
+<tr>
+<td>external_link.exclude</td>
+<td>需要排除的域名。主域名和子域名需分别配置</td>
+<td></td>
+</tr>
+<tr>
+<td>filename_case</td>
+<td>把文件名转换为（1）小写或（2）大写</td>
+<td>0</td>
+</tr>
+<tr>
+<td>render_drafts</td>
+<td>显示草稿</td>
+<td>false</td>
+</tr>
+<tr>
+<td>post_asset_folder</td>
+<td>启动资源文件夹</td>
+<td>false</td>
+</tr>
+<tr>
+<td>relative_link</td>
+<td>把链接改为与根目录的相对地址</td>
+<td>false</td>
+</tr>
+<tr>
+<td>future</td>
+<td>显示未来的文章</td>
+<td>true</td>
+</tr>
+<tr>
+<td>highlight</td>
+<td>代码块的设置，请参考 Highlight.js</td>
+<td></td>
+</tr>
+<tr>
+<td>prismjs</td>
+<td>代码块的设置，请参考 PrismJS</td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="分类-amp-标签"><a href="#分类-amp-标签" class="headerlink" title="分类 &amp; 标签"></a>分类 &amp; 标签</h3><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>描述</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>default_category</td>
+<td>默认分类</td>
+<td>uncategorized</td>
+</tr>
+<tr>
+<td>category_map</td>
+<td>分类别名</td>
+<td></td>
+</tr>
+<tr>
+<td>tag_map</td>
+<td>标签别名</td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="日期-时间格式"><a href="#日期-时间格式" class="headerlink" title="日期 / 时间格式"></a>日期 / 时间格式</h3><p>Hexo 使用 <a target="_blank" rel="noopener" href="https://momentjs.com/">Moment.js</a> 来解析和显示时间。</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>描述</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>date_format</td>
+<td>日期格式</td>
+<td>YYYY-MM-DD</td>
+</tr>
+<tr>
+<td>time_format</td>
+<td>时间格式</td>
+<td>HH:mm:ss</td>
+</tr>
+<tr>
+<td>updated_option</td>
+<td>当 Front Matter 中没有指定<code>updated</code>时的取值</td>
+<td>mtime</td>
+</tr>
+</tbody></table>
+<div class="note info no-icon"><p><code>updated_option</code>控制了当 Front Matter 中没有指定<code>updated</code>时，<code>updated</code>如何取值：</p>
+<ul>
+<li>mtime：使用文件的最后修改时间。这是从 Hexo 3.0.0 开始的默认行为。</li>
+<li>date：使用<code>date</code>作为<code>updated</code>的值。可用于 Git 工作流之中，因为使用 Git 管理站点时，文件的最后修改日期常常会发生变化。</li>
+<li>empty：直接删除<code>updated</code>。使用这一选项可能会导致大部分主题和插件无法正常工作。</li>
+</ul>
+</div>
+
+<h3 id="分页"><a href="#分页" class="headerlink" title="分页"></a>分页</h3><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>描述</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>per_page</td>
+<td>每页显示的文章量（0 为关闭分页功能）</td>
+<td>10</td>
+</tr>
+<tr>
+<td>pagination_dir</td>
+<td>分页目录</td>
+<td>page</td>
+</tr>
+</tbody></table>
+<h3 id="包括或不包括目录和文件"><a href="#包括或不包括目录和文件" class="headerlink" title="包括或不包括目录和文件"></a>包括或不包括目录和文件</h3><p>在 Hexo 配置文件中，通过设置 include/exclude 可以让 Hexo 进行处理或忽略某些目录和文件夹。你可以使用 <a target="_blank" rel="noopener" href="https://github.com/micromatch/micromatch#extended-globbing">glob</a> 表达式对目录和文件进行匹配。</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>include</td>
+<td>Hexo 默认会忽略隐藏文件以及<code>_</code>和<code>.</code>开头的文件(夹)，_post 和 _data 等目录除外。</td>
+</tr>
+<tr>
+<td>exclude</td>
+<td>Hexo 会忽略这些文件和目录。</td>
+</tr>
+<tr>
+<td>ignore</td>
+<td>Hexo 会忽略这些文件和目录。</td>
+</tr>
+</tbody></table>
+<div class="note warning"><p><code>include</code>和<code>exclude</code>只适用于 source 文件夹，而<code>ignore</code>适用于所有文件夹。</p>
+</div>
+
+<p>例如：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">include:</span><br><span class="line">  # 包括 &#x27;source/css/_typing.css&#x27; 文件</span><br><span class="line">  - &quot;css/_typing.css&quot;</span><br><span class="line">  # 包括 &#x27;source/_css/&#x27; 中的任何文件，但不包括子目录及其中的文件</span><br><span class="line">  - &quot;_css/*&quot;</span><br><span class="line">  # 包括 &#x27;source/_css/&#x27; 中的任何文件和子目录下的任何文件</span><br><span class="line">  - &quot;_css/**/*&quot;</span><br><span class="line"></span><br><span class="line">exclude:</span><br><span class="line">  # 不包括 &#x27;source/js/test.js&#x27; 文件</span><br><span class="line">  - &quot;js/test.js&quot;</span><br><span class="line">  # 不包括 &#x27;source/js/&#x27; 中的文件、但包括子目录下的所有目录和文件</span><br><span class="line">  - &quot;js/*&quot;</span><br><span class="line">  # 不包括 &#x27;source/js/&#x27; 中的文件和子目录下的任何文件</span><br><span class="line">  - &quot;js/**/*&quot;</span><br><span class="line">  # 不包括 &#x27;source/js/&#x27; 目录下的所有文件名以 &#x27;test&#x27; 开头的文件，但包括其它文件和子目录下的单文件</span><br><span class="line">  - &quot;js/test*&quot;</span><br><span class="line">  # 不包括 &#x27;source/js/&#x27; 及其子目录中任何以 &#x27;test&#x27; 开头的文件</span><br><span class="line">  - &quot;js/**/test*&quot;</span><br><span class="line">  # 不要用 exclude 来忽略 &#x27;source/_posts/&#x27; 中的文件。你应该使用 &#x27;skip_render&#x27;，或者在要忽略的文件的文件名之前加一个下划线 &#x27;_&#x27;</span><br><span class="line">  # 在这里配置一个 - &quot;_posts/hello-world.md&quot; 是没有用的</span><br><span class="line"></span><br><span class="line">ignore:</span><br><span class="line">  # 忽略所有 &#x27;foo&#x27; 文件夹</span><br><span class="line">  - &quot;**/foo&quot;</span><br><span class="line">  # 只忽略 &#x27;themes/&#x27; 下的 &#x27;foo&#x27; 文件夹</span><br><span class="line">  - &quot;**/themes/*/foo&quot;</span><br><span class="line">  # 忽略所有 &#x27;themes/&#x27; 及其子目录下的 &#x27;foo&#x27; 文件夹</span><br><span class="line">  - &quot;**/themes/**/foo&quot;</span><br></pre></td></tr></table></figure>
+
+<h3 id="扩展"><a href="#扩展" class="headerlink" title="扩展"></a>扩展</h3><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>theme</td>
+<td>当前主题名称。值为<code>false</code>时禁用主题</td>
+</tr>
+<tr>
+<td>theme_config</td>
+<td>主题的配置。在这里放置的配置会覆盖主题目录下 _config.yml 中的配置</td>
+</tr>
+</tbody></table>
+<h3 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h3><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>deploy</td>
+<td>部署部分的设置</td>
+</tr>
+<tr>
+<td>deploy.type</td>
+<td>部署类型，通常设置为<code>git</code></td>
+</tr>
+<tr>
+<td>deploy.repo</td>
+<td>要部署到的远程仓库的链接</td>
+</tr>
+<tr>
+<td>deploy.branch</td>
+<td>要部署到的远程仓库的分支名</td>
+</tr>
+</tbody></table>
+<h3 id="备用站点配置文件"><a href="#备用站点配置文件" class="headerlink" title="备用站点配置文件"></a>备用站点配置文件</h3><p>可以在 hexo-cli 中使用<code>--config</code>参数来指定自定义配置文件的路径。你可以使用一个 YAML 或 JSON 文件的路径，也可以使用逗号（无空格）的多个 YAML 或 JSON 文件的路径。例如：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 使用 &#x27;custom.yml&#x27; 代替 &#x27;_config.yml&#x27;</span><br><span class="line">hexo server --config custom.yml</span><br><span class="line"></span><br><span class="line"># 使用更多个配置文件，排在后面的文件优先（将覆盖前面文件中的配置）</span><br><span class="line">hexo generate --config custom.yml,custom2.json,custom3.yml</span><br></pre></td></tr></table></figure>
+
+<p>当你指定了多个配置文件以后，Hexo 会按顺序将这部分配置文件合并成一个 _multiconfig.yml。如果遇到重复的配置，排在后面的文件的配置会覆盖排在前面的文件的配置。这个原则适用于任意数量、任意深度的 YAML 和 JSON 文件。</p>
+<p>例如，使用<code>--config</code>指定了两个自定义配置文件：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo generate --config custom.yml,custom2.json</span><br></pre></td></tr></table></figure>
+
+<p>如果 custom.yml 中指定了<code>foo: bar</code>，在 custom2.json 中指定了 <code>&quot;foo&quot;: &quot;dinosaur&quot;</code>，那么在 _multiconfig.yml 中你会得到<code>foo: dinosaur</code>。</p>
+<h3 id="备用主题配置文件"><a href="#备用主题配置文件" class="headerlink" title="备用主题配置文件"></a>备用主题配置文件</h3><p>通常情况下，Hexo 主题是一个独立的项目，并拥有一个独立的 _config.yml 配置文件。</p>
+<p>除了自行维护独立的主题配置文件，你也可以在其他地方对主题进行配置。</p>
+<h4 id="配置文件中的-theme-config"><a href="#配置文件中的-theme-config" class="headerlink" title="配置文件中的 theme_config"></a>配置文件中的 theme_config</h4><figure class="highlight yml"><figcaption><span># _config.yml</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="attr">theme:</span> <span class="string">&quot;my-theme&quot;</span></span><br><span class="line"><span class="attr">theme_config:</span></span><br><span class="line">  <span class="attr">bio:</span> <span class="string">&quot;My awesome bio&quot;</span></span><br><span class="line">  <span class="attr">foo:</span></span><br><span class="line">    <span class="attr">bar:</span> <span class="string">&#x27;a&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight yml"><figcaption><span># themes/my-theme/_config.yml</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="attr">bio:</span> <span class="string">&quot;Some generic bio&quot;</span></span><br><span class="line"><span class="attr">logo:</span> <span class="string">&quot;a-cool-image.png&quot;</span></span><br><span class="line">  <span class="attr">foo:</span></span><br><span class="line">    <span class="attr">baz:</span> <span class="string">&#x27;b&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>最终主题配置的输出是：</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">bio:</span> <span class="string">&quot;My awesome bio&quot;</span>,</span><br><span class="line">  <span class="attr">logo:</span> <span class="string">&quot;a-cool-image.png&quot;</span>,</span><br><span class="line">  <span class="attr">foo:</span> &#123;</span><br><span class="line">    <span class="attr">bar:</span> <span class="string">&quot;a&quot;</span>,</span><br><span class="line">    <span class="attr">baz:</span> <span class="string">&quot;b&quot;</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="独立的-config-theme-yml-文件"><a href="#独立的-config-theme-yml-文件" class="headerlink" title="独立的 _config.[theme].yml 文件"></a>独立的 _config.[theme].yml 文件</h4><p>独立的主题配置文件应放置于站点根目录下，支持 yml 或 json 格式。需要配置站点 _config.yml 文件中的<code>theme</code>，以供 Hexo 寻找 _config.[theme].yml 文件。</p>
+<figure class="highlight yml"><figcaption><span># _config.yml</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="attr">theme:</span> <span class="string">&quot;my-theme&quot;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight yml"><figcaption><span># _config.my-theme.yml</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="attr">bio:</span> <span class="string">&quot;My awesome bio&quot;</span></span><br><span class="line"><span class="attr">foo:</span></span><br><span class="line">  <span class="attr">bar:</span> <span class="string">&#x27;a&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight yml"><figcaption><span># themes/my-theme/_config.yml</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="attr">bio:</span> <span class="string">&quot;Some generic bio&quot;</span></span><br><span class="line"><span class="attr">logo:</span> <span class="string">&quot;a-cool-image.png&quot;</span></span><br><span class="line">  <span class="attr">foo:</span></span><br><span class="line">    <span class="attr">baz:</span> <span class="string">&#x27;b&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>最终主题配置的输出是：</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">bio:</span> <span class="string">&quot;My awesome bio&quot;</span>,</span><br><span class="line">  <span class="attr">logo:</span> <span class="string">&quot;a-cool-image.png&quot;</span>,</span><br><span class="line">  <span class="attr">foo:</span> &#123;</span><br><span class="line">    <span class="attr">bar:</span> <span class="string">&quot;a&quot;</span>,</span><br><span class="line">    <span class="attr">baz:</span> <span class="string">&quot;b&quot;</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<div class="note warning"><p>强烈建议你将所有的主题配置集中在一起。如果你不得不在多处配置你的主题，那么这些信息对你将会非常有用：Hexo 在合并主题配置时，Hexo 配置文件中的 <code>theme_config</code> 的优先级最高，其次是 _config.[theme].yml 文件，最后是位于主题目录下的 _config.yml 文件。</p>
+</div>
+
+      </div>
+      
+      
+      
+    </div>
+  <ul class="breadcrumb">
+            <li><a href="/hexo/started/">STARTED</a></li>
+          <li>CONFIGURATION</li>
+        
+  </ul>
+
+    
+    
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Hexo</span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@next-theme/pjax@0.5.0/pjax.min.js" integrity="sha256-3NkoLDrmHLTYj7csHIZSr0MHAFTXth7Ua/DDt4MRUAg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/pangu@4.0.7/dist/browser/pangu.min.js" integrity="sha256-j+yj56cdEY2CwkVtGyz18fNybFGpMGJ8JxG3GSyO2+I=" crossorigin="anonymous"></script>
+<script src="/hexo/js/comments.js"></script><script src="/hexo/js/utils.js"></script><script src="/hexo/js/motion.js"></script><script src="/hexo/js/next-boot.js"></script><script src="/hexo/js/pjax.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/hexo/js/third-party/search/local-search.js"></script>
+
+
+  <script class="next-config" data-name="mermaid" type="application/json">{"enable":true,"theme":{"light":"default","dark":"dark"},"js":{"url":"https://cdn.jsdelivr.net/npm/mermaid@8.13.2/dist/mermaid.min.js","integrity":"sha256-UIQPVkGifpwMvDH5yGgORJ9sSTDq38zz6BGU6dNaKhM="}}</script>
+  <script src="/hexo/js/third-party/tags/mermaid.js"></script>
+
+  <script src="/hexo/js/third-party/fancybox.js"></script>
+
+
+  
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/quicklink@2.2.0/dist/quicklink.umd.js" integrity="sha256-4kQf9z5ntdQrzsBC3YSHnEz02Z9C1UeW/E9OgnvlzSY=" crossorigin="anonymous"></script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":false,"archive":false,"delay":true,"timeout":3000,"priority":true,"url":"https://mopsite.github.io/hexo/started/configuration/"}</script>
+  <script src="/hexo/js/third-party/quicklink.js"></script>
+
+</body>
+</html>

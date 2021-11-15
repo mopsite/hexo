@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/hexo/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/hexo/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/hexo/images/favicon-16x16.png">
+  <link rel="mask-icon" href="/hexo/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/hexo/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"mopsite.github.io","root":"/hexo/","images":"/hexo/images","scheme":"Gemini","darkmode":false,"version":"8.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/hexo/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/hexo/js/config.js"></script>
+<meta name="description" content="Hexo 对 Highlight.js 与 PrismJS 两种代码高亮库提供内建支持。 插入代码块Hexo 支持两种代码写法——代码块标签插件和反引号代码块标签插件： &amp;#123;% codeblock [title] [lang:language] [url] [link text] [additional options] %&amp;#125;code snippet&amp;#123;% endcode">
+<meta property="og:type" content="website">
+<meta property="og:title" content="代码高亮">
+<meta property="og:url" content="https://mopsite.github.io/hexo/customization/syntax-highlight/index.html">
+<meta property="og:site_name" content="Hexo-CLI">
+<meta property="og:description" content="Hexo 对 Highlight.js 与 PrismJS 两种代码高亮库提供内建支持。 插入代码块Hexo 支持两种代码写法——代码块标签插件和反引号代码块标签插件： &amp;#123;% codeblock [title] [lang:language] [url] [link text] [additional options] %&amp;#125;code snippet&amp;#123;% endcode">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-10-22T05:02:02.000Z">
+<meta property="article:modified_time" content="2021-11-15T17:37:42.191Z">
+<meta property="article:author" content="Hexo">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://mopsite.github.io/hexo/customization/syntax-highlight/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":false,"lang":"zh-CN","comments":true,"permalink":"https://mopsite.github.io/hexo/customization/syntax-highlight/index.html","path":"customization/syntax-highlight/index.html","title":"代码高亮"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>代码高亮 | Hexo-CLI
+</title>
+  
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/hexo/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/hexo/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">Hexo-CLI</h1>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-安装"><a href="/hexo/installation/" rel="section"><i class="fa fa-download fa-fw"></i>安装</a></li>
+        
+            
+  <li class="menu-item menu-item-开始使用"><a href="/hexo/started/" rel="section"><i class="fa fa-bell fa-fw"></i>开始使用</a></li>
+
+
+      
+        
+            
+  <li class="menu-item menu-item-基本操作"><a href="/hexo/usage/" rel="section"><i class="fa fa-pen fa-fw"></i>基本操作</a></li>
+
+
+      
+        <li class="menu-item menu-item-部署"><a href="/hexo/deployment/" rel="section"><i class="fa fa-project-diagram fa-fw"></i>部署</a></li>
+        
+            
+  <li class="menu-item menu-item-自定义"><a href="/hexo/customization/" rel="section"><i class="fa fa-cog fa-fw"></i>自定义</a></li>
+
+
+      
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8F%92%E5%85%A5%E4%BB%A3%E7%A0%81%E5%9D%97"><span class="nav-number">1.</span> <span class="nav-text">插入代码块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE"><span class="nav-number">2.</span> <span class="nav-text">配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A6%81%E7%94%A8"><span class="nav-number">3.</span> <span class="nav-text">禁用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Highlight-js"><span class="nav-number">4.</span> <span class="nav-text">Highlight.js</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#auto-detect"><span class="nav-number">4.1.</span> <span class="nav-text">auto_detect</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#line-number"><span class="nav-number">4.2.</span> <span class="nav-text">line_number</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#tab-replace"><span class="nav-number">4.3.</span> <span class="nav-text">tab_replace</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#wrap"><span class="nav-number">4.4.</span> <span class="nav-text">wrap</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#hljs"><span class="nav-number">4.5.</span> <span class="nav-text">hljs</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PrismJS"><span class="nav-number">5.</span> <span class="nav-text">PrismJS</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#preprocess"><span class="nav-number">5.1.</span> <span class="nav-text">preprocess</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#line-number-1"><span class="nav-number">5.2.</span> <span class="nav-text">line_number</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#tab-replace-1"><span class="nav-number">5.3.</span> <span class="nav-text">tab_replace</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Hexo"
+      src="/hexo/images/avatar.svg">
+  <p class="site-author-name" itemprop="name">Hexo</p>
+  <div class="site-description" itemprop="description">快速、简洁且高效的博客框架</div>
+</div>
+
+
+  <div class="links-of-blogroll site-overview-item animated">
+    <div class="links-of-blogroll-title">
+      
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://mopsite.github.io/git" title="https:&#x2F;&#x2F;mopsite.github.io&#x2F;git">Git</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://mopsite.github.io/next" title="https:&#x2F;&#x2F;mopsite.github.io&#x2F;next">NexT</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://mopsite.github.io/fontawesome" title="https:&#x2F;&#x2F;mopsite.github.io&#x2F;fontawesome">FontAwesome</a>
+        </li>
+    </ul>
+  </div>
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner page posts-expand">
+  
+
+      
+      
+
+      
+      
+
+      
+
+        
+        <ul class="sub-menu menu">
+          
+            
+          
+          
+              
+  <li class="menu-item menu-item-永久链接"><a href="/hexo/customization/permalinks/" rel="section"><i class="fa fa-link fa-fw"></i>永久链接</a></li>
+
+
+          
+          
+              
+  <li class="menu-item menu-item-主题"><a href="/hexo/customization/themes/" rel="section"><i class="fa fa-tshirt fa-fw"></i>主题</a></li>
+
+
+          
+          
+              
+  <li class="menu-item menu-item-模板"><a href="/hexo/customization/templates/" rel="section"><i class="fa fa-layer-group fa-fw"></i>模板</a></li>
+
+
+          
+          
+              
+  <li class="menu-item menu-item-国际化"><a href="/hexo/customization/internationalization/" rel="section"><i class="fa fa-globe fa-fw"></i>国际化</a></li>
+
+
+          
+          
+              
+  <li class="menu-item menu-item-代码高亮"><a href="/hexo/customization/syntax-highlight/" rel="section"><i class="fa fa-code fa-fw"></i>代码高亮</a></li>
+
+
+          
+          
+              
+  <li class="menu-item menu-item-插件"><a href="/hexo/customization/plugins/" rel="section"><i class="fa fa-tools fa-fw"></i>插件</a></li>
+
+
+          
+        </ul>
+        
+
+        
+        
+      
+  
+
+
+    
+    
+    
+    <div class="post-block" lang="zh-CN"><header class="post-header">
+
+<h1 class="post-title" itemprop="name headline">代码高亮
+</h1>
+
+<div class="post-meta-container">
+  <ul class="breadcrumb">
+            <li><a href="/hexo/customization/">CUSTOMIZATION</a></li>
+          <li>SYNTAX-HIGHLIGHT</li>
+        
+  </ul>
+</div>
+
+</header>
+
+      
+      
+      <div class="post-body">
+          <p>Hexo 对 <a target="_blank" rel="noopener" href="https://github.com/highlightjs/highlight.js">Highlight.js</a> 与 <a target="_blank" rel="noopener" href="https://github.com/PrismJS/prism">PrismJS</a> 两种代码高亮库提供内建支持。</p>
+<h3 id="插入代码块"><a href="#插入代码块" class="headerlink" title="插入代码块"></a>插入代码块</h3><p>Hexo 支持两种代码写法——代码块标签插件和反引号代码块标签插件：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% codeblock [title] [lang:language] [url] [link text] [additional options] %&#125;</span><br><span class="line">code snippet</span><br><span class="line">&#123;% endcodeblock %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% code [title] [lang:language] [url] [link text] [additional options] %&#125;</span><br><span class="line">code snippet</span><br><span class="line">&#123;% endcode %&#125;</span><br><span class="line"></span><br><span class="line">``` [language] [title] [url] [link text] [additional options]</span><br><span class="line">code snippet</span><br><span class="line">```</span><br></pre></td></tr></table></figure>
+
+<h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><p>以下为 Hexo 的默认配置：</p>
+<figure class="highlight yml"><figcaption><span>_config.yml</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="attr">highlight:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">auto_detect:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">line_number:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">tab_replace:</span> <span class="string">&quot;&quot;</span></span><br><span class="line">  <span class="attr">wrap:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">hljs:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">prismjs:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">preprocess:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">line_number:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">tab_replace:</span> <span class="string">&quot;&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="禁用"><a href="#禁用" class="headerlink" title="禁用"></a>禁用</h3><p>当<code>highlight.enable</code>和<code>prismjs.enable</code>均为 false 时，代码块输出的 HTML 由相应的渲染器控制。</p>
+<figure class="highlight yml"><figcaption><span>_config.yml</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="attr">highlight:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">prismjs:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+
+<p>如果内建语法高亮器均为启用，你可以安装第三方语法高亮插件，也可以使用浏览器端的语法高亮库（例如 highlight.js 和 prism.js 也都支持在浏览器中运行）。</p>
+<h3 id="Highlight-js"><a href="#Highlight-js" class="headerlink" title="Highlight.js"></a>Highlight.js</h3><p><code>highlight.js</code>默认开启，用作 Hexo 的服务端高亮组件。如果你需要在浏览器端运行 highlight.js，请把它关闭。</p>
+<figure class="highlight yml"><figcaption><span>_config.yml</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="attr">highlight:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">auto_detect:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">line_number:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">tab_replace:</span> <span class="string">&quot;  &quot;</span></span><br><span class="line">  <span class="attr">wrap:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">hljs:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">prismjs:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+
+<div class="note info"><p>「服务端高亮」指语法高亮在<code>hexo generate</code>或<code>hexo server</code>时完成。</p>
+</div>
+
+<h4 id="auto-detect"><a href="#auto-detect" class="headerlink" title="auto_detect"></a>auto_detect</h4><p><code>auto_detect</code>是 highlight.js 的特性，能够自动检测代码块的语言。</p>
+<p>如果你想使用「子语言高亮」功能，例如在高亮 HTML 的同时高亮内部嵌入的 JavaScript 代码，请开启<code>auto_detect</code>，并且在文章中插入代码块时不要标注语言。</p>
+<div class="note danger"><p><code>auto_detect</code>十分耗费资源，如果你不需要使用「子语言高亮」功能，或者不介意在书写代码块时标注语言，请不要启用此功能。</p>
+</div>
+
+<h4 id="line-number"><a href="#line-number" class="headerlink" title="line_number"></a>line_number</h4><p>highlight.js 不支持行号显示。Hexo 通过用<code>&lt;figure&gt;</code>和<code>&lt;table&gt;</code>包裹代码块为其添加了行号显示支持：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">figure</span> <span class="attr">class</span>=<span class="string">&quot;highlight yaml&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">table</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tbody</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span> <span class="attr">class</span>=<span class="string">&quot;gutter&quot;</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">pre</span>&gt;</span><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&quot;line&quot;</span>&gt;</span>1<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;/<span class="name">pre</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span> <span class="attr">class</span>=<span class="string">&quot;code&quot;</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">pre</span>&gt;</span><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&quot;line&quot;</span>&gt;</span><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&quot;attr&quot;</span>&gt;</span>hello:<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&quot;string&quot;</span>&gt;</span>hexo<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;/<span class="name">pre</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tbody</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">figure</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>这不是 highlight.js 的行为，因此需要为<code>&lt;figure&gt;</code>和<code>&lt;table&gt;</code>添加自定义 CSS 代码。部分主题对此提供内建支持。</p>
+<h4 id="tab-replace"><a href="#tab-replace" class="headerlink" title="tab_replace"></a>tab_replace</h4><p>将代码内的 tab（<code>\t</code>）替换为给定值，默认是两个空格。</p>
+<h4 id="wrap"><a href="#wrap" class="headerlink" title="wrap"></a>wrap</h4><p>为了支持行号显示，Hexo 将输出包裹在了<code>&lt;figure&gt;</code>和<code>&lt;table&gt;</code>内部。如果要保持 highlight.js 原来的行为，你需要将<code>line_number</code>和<code>wrap</code>全部关闭。</p>
+<p>因为<code>line_number</code>功能依赖<code>wrap</code>，你无法在配置中关闭<code>wrap</code>而又开启<code>line_number</code>。如果你将<code>line_number</code>设置为 true 的话，<code>wrap</code>将被自动开启。</p>
+<h4 id="hljs"><a href="#hljs" class="headerlink" title="hljs"></a>hljs</h4><p>当<code>hljs</code>设置为 true 时，所有代码块的 HTML 输出均会给 class 添加<code>hljs-</code>前缀（无论<code>wrap</code>是否开启）。</p>
+<p>当<code>line_number</code>和<code>wrap</code>为 true，且<code>hljs</code>为 true 时，你可以在站点上直接应用 highlight.js 的主题。</p>
+<h3 id="PrismJS"><a href="#PrismJS" class="headerlink" title="PrismJS"></a>PrismJS</h3><p>PrismJS 默认禁用。启用前应先设置<code>highlight.enable</code>为 false。</p>
+<figure class="highlight yml"><figcaption><span>_config.yml</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="attr">highlight:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">prismjs:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">preprocess:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">line_number:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">tab_replace:</span> <span class="string">&quot;&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="preprocess"><a href="#preprocess" class="headerlink" title="preprocess"></a>preprocess</h4><p>Hexo 内建的 PrismJS 支持浏览器端高亮（<code>preprocess</code>设置为 false）和服务器端高亮（<code>preprocess</code>设置为 true）两种方式。</p>
+<p>使用服务器端高亮时，只需在站点引入 PrismJS 的主题（CSS 样式表）即可；而使用浏览器端高亮时，需要将 JavaScript 文件也引入。</p>
+<p>PrismJS 主要是面向浏览器的。因此，在服务器高亮模式下只有部分插件可用：</p>
+<ul>
+<li>行号显示：需要引入 prism-line-numbers.css，Hexo 将生成其所需的 HTML 代码片段。</li>
+<li>语言显示：当代码块有标注语言时，Hexo 总会添加<code>data-language</code>属性。</li>
+<li>Hexo 也支持其他不需要特殊 HTML 代码格式的 PrismJS 插件，不过你需要引入它们的 JavaScript 文件。</li>
+</ul>
+<p><code>preprocess</code>设置为 false 时所有 PrismJS 插件均可用，只需额外注意以下几点：</p>
+<ul>
+<li>行号显示：Hexo 不会生成插件所需的 HTML 代码格式，prism-line-numbers.css 和 prism-line-numbers.js 均需被引入。</li>
+<li>语言显示：当代码块标注语言时，Hexo 总会添加<code>data-language</code>属性。</li>
+<li>高亮特定行：Hexo 的代码块标签插件和反引号代码块标签插件都支持高亮特定行的语法（即<code>mark</code>选项）。当<code>mark</code>选项被设置时，Hexo 将生成其所需的 HTML 代码格式。</li>
+</ul>
+<h4 id="line-number-1"><a href="#line-number-1" class="headerlink" title="line_number"></a>line_number</h4><p>当<code>preprocess</code>与<code>line_number</code>均设置为 true 时，只需要引入 prism-line-numbers.css 即可启用行号显示。</p>
+<p>如果<code>preprocess</code>与<code>line_number</code>均被关闭，则需要将 prism-line-numbers.css 和 prism-line-numbers.js 都引入才能启用行号显示。</p>
+<h4 id="tab-replace-1"><a href="#tab-replace-1" class="headerlink" title="tab_replace"></a>tab_replace</h4><p>将代码内的 tab（<code>\t</code>）替换为给定值，默认是两个空格。</p>
+
+      </div>
+      
+      
+      
+    </div>
+  <ul class="breadcrumb">
+            <li><a href="/hexo/customization/">CUSTOMIZATION</a></li>
+          <li>SYNTAX-HIGHLIGHT</li>
+        
+  </ul>
+
+    
+    
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Hexo</span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@next-theme/pjax@0.5.0/pjax.min.js" integrity="sha256-3NkoLDrmHLTYj7csHIZSr0MHAFTXth7Ua/DDt4MRUAg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/pangu@4.0.7/dist/browser/pangu.min.js" integrity="sha256-j+yj56cdEY2CwkVtGyz18fNybFGpMGJ8JxG3GSyO2+I=" crossorigin="anonymous"></script>
+<script src="/hexo/js/comments.js"></script><script src="/hexo/js/utils.js"></script><script src="/hexo/js/motion.js"></script><script src="/hexo/js/next-boot.js"></script><script src="/hexo/js/pjax.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/hexo/js/third-party/search/local-search.js"></script>
+
+
+  <script class="next-config" data-name="mermaid" type="application/json">{"enable":true,"theme":{"light":"default","dark":"dark"},"js":{"url":"https://cdn.jsdelivr.net/npm/mermaid@8.13.2/dist/mermaid.min.js","integrity":"sha256-UIQPVkGifpwMvDH5yGgORJ9sSTDq38zz6BGU6dNaKhM="}}</script>
+  <script src="/hexo/js/third-party/tags/mermaid.js"></script>
+
+  <script src="/hexo/js/third-party/fancybox.js"></script>
+
+
+  
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/quicklink@2.2.0/dist/quicklink.umd.js" integrity="sha256-4kQf9z5ntdQrzsBC3YSHnEz02Z9C1UeW/E9OgnvlzSY=" crossorigin="anonymous"></script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":false,"archive":false,"delay":true,"timeout":3000,"priority":true,"url":"https://mopsite.github.io/hexo/customization/syntax-highlight/"}</script>
+  <script src="/hexo/js/third-party/quicklink.js"></script>
+
+</body>
+</html>
